@@ -1,0 +1,1115 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  background-color: var(--transparent);
+  /* background-color: var(--bg); */
+  font-family: "Inter", system-ui, sans-serif;
+  overflow: auto;
+  
+}
+
+body::-webkit-scrollbar {
+  width: 6px;
+}
+
+:root {
+  --bg: rgba(108, 94, 121, 0.293);
+  --card: #6C5E79;
+  --transparent: #9F95A9;
+  --text: #6C5E79;
+}
+
+.dark-theme {
+  --bg: rgba(151, 173, 162, 0.903);
+  --card: #6C5E79;
+  --card: #537D5D;
+  --transparent: #6d82728e;
+  --text: #537D5D;
+}
+
+/* DAILY PLANNER */
+
+.fullcard{
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: var(--transparent);
+  box-sizing: border-box;
+  min-height: 100dvh;
+}
+.dayPlan {
+  overflow: auto;
+  width: 100%;
+  height: 70vh;
+  border-radius: 1rem;
+  padding: 0.7rem;
+  background-color: var(--bg);
+  backdrop-filter: blur(4px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.7rem;
+  align-items: start;
+  padding: 2rem;
+}
+
+.dayPlan::-webkit-scrollbar {
+  width: 6px;
+}
+
+.dayPlanTime p {
+  white-space: nowrap;
+}
+
+.dayPlanTime {
+  background: var(--card);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+  padding: 1rem;
+  border-radius: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: rgb(45, 43, 43);
+  font-size: 0.9rem;
+}
+
+.dayPlanTime input {
+  width: 100%;
+  font-size: 1.2rem;
+  outline: none;
+  background: var(--card);
+  border: none;
+  color: rgb(177, 169, 169);
+}
+
+.past {
+  opacity: 0.5;
+}
+
+/* NAV */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bg);
+  /* background-color: var(--transparent); */
+  padding: 1rem 2rem;
+  margin: 1rem 0;
+  border-radius: 10px;
+}
+
+nav h1 {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 600;
+  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+}
+
+nav button {
+  padding: 11px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--card);
+  color: #ffffffbd;
+  font-size: 0.9rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: 0.3s;
+}
+
+nav button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+  transform: scale(1.1);
+}
+
+nav button i {
+  font-size: 1.2rem;
+}
+
+/* WEATHER SECTION */
+#weather {
+  width: 100%;
+  min-height: 260px;
+  border-radius: 20px;
+  background-color: var(--card);
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  font-family: Arial, sans-serif;
+}
+
+/* Overlay */
+.overlay {
+  width: 100%;
+  height: 100%;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ffffffb0;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+/* LEFT */
+.left h2 {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  margin-bottom: 6px;
+}
+
+.left p {
+  margin: 4px 0;
+  opacity: 0.9;
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+}
+
+.left h4 {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+/* RIGHT */
+.right h1 {
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  margin-bottom: 6px;
+}
+
+.right h2 {
+  font-size: 1.2rem;
+}
+
+.right p {
+  margin: 3px 0;
+  font-size: 0.9rem;
+  opacity: 0.95;
+}
+
+/* DAILY GOAL , TODO LIST */
+#allcard {
+  background-color: transparent;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+.fullcard{
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: var(--transparent);
+  box-sizing: border-box;
+}
+/* MOTIVATION */
+.motivation {
+  position: relative;
+}
+
+.motivation-container {
+  align-self: center;
+  width: 55vw;
+  padding: 0.5rem;
+  background-color: var(--transparent);
+  border-radius: 1.5rem;
+  backdrop-filter: blur(15px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: 0.4s ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.motivation-container:hover {
+  scale: 0.9;
+}
+
+.motivation-container::after {
+  content: '';
+  width: 100%;
+  position: absolute;
+  border-radius: 1rem;
+  scale: 1.15;
+  z-index: 8;
+  filter: blur(120px);
+}
+
+.motivation-tag {
+  background-color: var(--card);
+  margin: 1rem;
+  border-radius: 0.7rem;
+  padding: 1rem;
+}
+
+.motivation-tag h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.57);
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  letter-spacing: 1px;
+}
+
+.motivation-name {
+  margin: 2rem;
+  border-radius: 1rem;
+}
+
+.motivation-name h3 {
+  font-size: clamp(1rem, 3.2vh, 2rem);
+  position: relative;
+  padding: 1rem;
+  font-weight: 450;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.motivation-name h3::before {
+  content: "“";
+  font-size: 3rem;
+  position: absolute;
+  left: -10px;
+  top: -20px;
+  color: rgba(20, 20, 20, 0.767);
+}
+
+.motivation-name h3::after {
+  content: "”";
+  font-size: 3rem;
+  position: absolute;
+  right: -10px;
+  bottom: -20px;
+  color: rgba(20, 20, 20, 0.767);
+}
+
+.motivation-auther {
+  text-align: right;
+  margin: 1rem;
+  font-style: italic;
+  color: rgba(20, 20, 20, 0.767);
+  font-size: 1.2rem;
+}
+
+/* POMODORO TIMER */
+.pomodoro {
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0)
+  }
+
+  25% {
+    transform: translateX(-5px)
+  }
+
+  50% {
+    transform: translateX(5px)
+  }
+
+  75% {
+    transform: translateX(-5px)
+  }
+
+  100% {
+    transform: translateX(0)
+  }
+}
+
+.shake {
+  animation: shake 0.5s;
+}
+
+.timer-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 3rem;
+  text-align: center;
+  background-color: var(--transparent);
+  width: 450px;
+  padding: 3rem;
+  border-radius: 2rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  transition: all 0.2s ease;
+}
+
+/* MODES */
+.modes {
+  margin-bottom: 1rem;
+}
+
+.mode {
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0 0.7rem;
+  font-size: 1rem;
+  cursor: pointer;
+  padding-bottom: 4px;
+  transition: all 0.2s ease;
+}
+
+.mode.active {
+  color: white;
+  border-bottom: 2px solid var(--card);
+}
+
+.mode:hover {
+  color: white;
+}
+
+/* CONTROLS */
+.controls {
+  margin-top: 1rem;
+}
+
+.controls button {
+  padding: 1rem 1.6rem;
+  border-radius: 0.8rem;
+  border: none;
+  margin: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  background: var(--card);
+  color: white;
+  box-shadow: 5px 5px 5px rgb(74, 64, 76);
+  transition: all 0.2s ease;
+}
+
+.controls button:hover {
+  transform: translateY(-2px);
+}
+
+.controls button:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.timer-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.timer-container h1 {
+  font-size: 6.5rem;
+  color: rgba(255, 255, 255, 0.636);
+  font-family: 'Times New Roman', Times, serif
+}
+
+.timer-container button {
+  transition: all ease 0.2;
+  padding: 0.7rem 1.4rem;
+  border-radius: 0.6rem;
+  border: none;
+  margin: 1rem 0.1rem;
+  box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.774);
+  backdrop-filter: blur(15px);
+  background-color: var(--card);
+  color: rgba(255, 255, 255, 0.636);
+  font-size: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+.timer-container button:active {
+  box-shadow: 0px 0px 0px black;
+}
+
+main {
+  max-width: 1900px;
+  margin: auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+}
+
+.card {
+  min-height: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 10px;
+  padding: 1rem;
+  font-weight: 500;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  transition: 0.2s ease;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 10px;
+}
+
+.card p {
+  color: #292524;
+  font-size: large;
+}
+
+.back {
+  border-radius: 50%;
+  position: absolute;
+  right: 5%;
+  background-color: var(--card);
+  border: none;
+  padding: 0.8rem;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: 0.3s;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.back:hover {
+  color: #fafaf9;
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.back:active {
+  scale: 0.97;
+  color: #fafaf9;
+
+}
+
+.toDo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+
+.top {
+  /* letter-spacing: 1px; */
+  font-family: serif;
+  margin: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.top h1 {
+  font-size: clamp(1.9rem, 6vw, 2.5rem);
+}
+
+.goalSection::-webkit-scrollbar {
+  width: 6px;
+}
+
+.goalContainer {
+  max-width: min(95%, 1299px);
+  margin: auto;
+}
+
+.goalSection {
+  width: 100%;
+  padding: 1rem;
+  max-height: 500px;
+  overflow-y: auto;
+  background-color: var(--card);
+  border-radius: 14px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.allGoals {
+  width: 100%;
+  margin-top: 2rem;
+  display: grid;
+  gap: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  grid-template-columns: 1fr;
+}
+
+.allTask {
+  max-width: 85vw;
+  min-width: 800px;
+  align-self: center;
+  width: 100%;
+  max-height: 500px;
+  overflow-y: auto;
+  padding: 1.5rem;
+  background-color: var(--card);
+  border-radius: 14px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.goal {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.goal span {
+  width: fit-content;
+  border-radius: 19px;
+}
+
+.goalCard {
+  width: 100%;
+  background-color: var(--transparent);
+  padding: 1.2rem;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  transition: 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  word-break: break-word;
+}
+
+.goalBtm h3 {
+  font-size: 1.1rem;
+}
+
+.goalBtm p {
+  font-style: 0.9rem;
+  line-height: 1.4;
+}
+
+.goalBtm {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.goalTop {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* margin-bottom:0.8rem; */
+}
+
+.goalCard .deleteBtn {
+  padding: 1rem;
+  font-size: 2rem;
+  font-weight: 200;
+  color: rgb(158, 43, 43);
+}
+
+.deleteBtn i:hover {
+  border-radius: 50%;
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+}
+
+.goalTop h3 {
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.addGoals {
+  align-self: center;
+}
+
+.addTask form,
+.addGoals form {
+  max-width: 390px;
+  min-width: 260px;
+  flex: 1 1 300px;
+  background-color: var(--card);
+  backdrop-filter: blur(10px);
+  border-radius: 1.2rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 3rem;
+  align-self: center;
+}
+
+.allTask {
+  width: 100%;
+  max-height: 500px;
+  overflow-y: auto;
+  padding: 1.5rem;
+  background-color: var(--card);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  font-size: 18px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.allTask::-webkit-scrollbar {
+  width: 6px;
+}
+
+form input#task-input,
+input#tskinput,
+form textarea {
+  padding: 0.8rem 1rem;
+  width: 100%;
+  border-radius: 0.6rem;
+  border: 1px solid transparent;
+  background-color: var(--transparent);
+  transition: 0.3s ease;
+  margin: 0.4rem 0;
+  font-size: clamp(15px, 1vw, 19px);
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+form input:focus,
+form textarea:focus {
+  box-shadow: 0 0 0 3px rgba(24, 21, 33, 0.112);
+  background-color: white;
+  outline: none;
+}
+
+form textarea {
+  min-height: 120px;
+  resize: none;
+}
+
+.addTask button,
+.allTask button {
+  padding: 0.7rem;
+  border-radius: 0.6rem;
+  border: none;
+  font-weight: 500;
+  background-color: rgba(38, 37, 39, 0.823);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin-top: 0.2rem;
+}
+
+.addTask button,
+.allTask button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  color: white;
+  flex-wrap: wrap;
+}
+
+.task h3 {
+  flex: 1;
+  min-width: 150px;
+  word-break: break-word;
+  font-size:clamp(15px,1.5vw,22px);
+}
+
+.task button {
+  flex-shrink: 0;
+}
+
+.task p {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.addTask,
+.allTask {
+  min-width: 0;
+}
+
+.allTask h3 {
+  color: #121212;
+}
+
+.task h3 span {
+  font-size: 12px;
+  background: red;
+  padding: 0.3rem 0.6rem;
+  border-radius: 50%;
+  color: white;
+  font-weight: bold;
+}
+
+.task h3 span.true {
+  opacity: 1;
+}
+
+.task h3 span.false {
+  display: none;
+}
+
+.task:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+}
+
+.imp {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  margin: 0.5rem;
+  padding: 0.6rem 0;
+  gap: 1rem;
+}
+
+.imp input {
+  scale: 2;
+}
+
+.imp label {
+  font-size: 1.1rem;
+}
+
+/* LEVEL */
+.level {
+  margin: 1rem 0;
+}
+
+fieldset {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  padding: 1rem 1.5rem;
+  backdrop-filter: blur(10px);
+}
+
+.lvl {
+  display: flex;
+  gap: 13px;
+  margin-top: 9px;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.priority {
+  padding: 8px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.priority.high {
+  box-shadow: 0 5px 15px rgba(128, 56, 56, 0.8);
+  color: rgba(255, 0, 0, 0.447);
+}
+
+.priority.low {
+  box-shadow: 0 5px 15px rgba(33, 124, 33, 0.33);
+  color: rgba(20, 93, 24, 0.447);
+}
+
+.priority.medium {
+  box-shadow: 0 5px 15px rgba(107, 124, 33, 0.396);
+  color: rgba(104, 129, 41, 0.447);
+}
+
+/* Hover effect */
+.priority:hover {
+  background: rgba(255, 255, 255, 0.35);
+  transform: translateY(-2px);
+}
+
+/* Selected Effect */
+input[type="radio"]:checked+.priority {
+  background: white;
+  color: #333;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
+
+#goalBtn {
+  padding: 0.7rem;
+  border-radius: 0.6rem;
+  border: none;
+  font-weight: 500;
+  background-color: rgba(38, 37, 39, 0.823);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin-top: 0.2rem;
+}
+
+#todoContainer {
+  width: 95%;
+  margin: 3rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+}
+
+/*  CIRCULAR TIMER */
+.progress-ring {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0;
+  animation: float 4s ease-in-out infinite;
+}
+
+.progress-ring svg {
+  transform: rotate(-90deg);
+  display: block;
+}
+
+.progress-ring circle {
+  fill: none;
+  stroke-width: 7;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.running .progress {
+  filter: drop-shadow(0 0 8px var(--bg));
+}
+
+.progress {
+  stroke: var(--card);
+  stroke-dasharray: 628;
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 1s linear;
+}
+
+#time {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: white;
+}
+
+.empty {
+  font-size: clamp(1.2rem, 1.3rem, 2rem);
+  text-align: center;
+  color: rgb(123, 21, 21);
+}
+
+/* goalSection */
+.check1 {
+  display: flex;
+}
+
+.goalCheck {
+  width: 3rem;
+}
+
+.progressWrapper {
+  margin: 2rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.progressContainer {
+  width: 100%;
+  height: 15px;
+  background: #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  /* margin-top: 1rem; */
+}
+
+.progressBar {
+  height: 100%;
+  width: 0%;
+  background: #4caf50;
+  transition: width 0.3s ease;
+}
+
+.progressText {
+  /* margin-top: 0.5rem; */
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.goalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5rem;
+  margin: 1rem;
+
+}
+
+.goalHeader h2 {
+  font-weight: 500;
+}
+
+/* RESPONSIVE */
+/* 600 TO 990 */
+@media (min-width:600px) and (max-width:990px) {
+  .allTask {
+    max-width: 80vw;
+    align-self: center;
+    width: 100%;
+    max-height: 500px;
+    overflow-y: auto;
+    padding: 1.5rem;
+    background-color: var(--card);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  }
+
+  .timer-wrapper {
+    margin-top: 3.5rem;
+  }
+
+  /* <= 990*/
+}
+
+@media (max-width:990px) {
+  .motivation-container {
+    min-width: 290px;
+    width: 80vw;
+    margin-top: 2rem;
+  }
+
+  .goalSection {
+    width: 85vw;
+    align-self: center;
+  }
+
+  .dayPlan {
+    grid-template-columns: 1fr;
+  }
+
+  .addTask {
+    align-self: center;
+  }
+
+  .allTask {
+    align-self: center;
+  }
+
+}
+
+/* <=500 */
+@media(max-width:500px) {
+
+  .progress-ring {
+    bottom: -30px;
+  }
+
+  .timer-wrapper {
+    width: 90vw;
+    max-width: 400px;
+    top: 70%;
+    padding: 2rem;
+
+  }
+
+  .modes {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: center;
+
+  }
+
+  .mode {
+    align-self: center;
+    width: fit-content;
+  }
+
+  .controls {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 12px;
+
+  }
+}
+
+/* >=990 */
+@media (min-width: 990px) {
+  #todoContainer {
+    flex-direction: row;
+    align-items: flex-start;
+    margin-top: 2px;
+  }
+
+  .addTask {
+    width: 420px;
+    flex-shrink: 0;
+  }
+
+  .allTask {
+    flex: 1;
+    align-self: self-start;
+    max-height: 70vh;
+    /* width: 50%; */
+  }
+
+  .toDo {
+    align-items: flex-start;
+  }
+
+  .goalSection {
+    margin-left: 4rem;
+  }
+}
+
+/* PRIORITY (<=425) */
+@media (max-width:425px) {
+  fieldset {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .lvl {
+    gap: 8px;
+  }
+
+  .lvl label {
+    padding: 8px 9px;
+  }
+}

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- POPINS FONT -->
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./fav/pd.png" type="image/x-icon">
+    <!-- REMIX CDN -->
+     <link
+  href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+  rel="stylesheet"
+/>
+</head>
+<body>
+    <main id="dashboard">
+        <nav>
+            <h1>Productivity<span style="color: var(--card); font-weight: 700;"> Dashboard</span></h1>
+            <button class="theme"><i class="ri-sun-line"></i></button>
+        </nav>
+    <section id="weather">
+  <div class="overlay">
+    <div class="left">
+        <p>20 April 2026</p>
+          <h2>Saturday, 1:00 pm</h2>
+    <h4>Mahuva</h4>
+    </div>
+
+    <div class="right">
+       <h1>20 °C</h1>
+      <h2>Clear</h2>
+      <p class="Precipitation">Precipitation: 0%</p>
+      <p class="Humidity">Humidity: 21%</p>
+      <p class="wind">Wind: 10 km/h</p>
+    </div>
+  </div>
+</section>
+
+        <section id="allcard">
+            <div class="card " id="0"><P>To Do List <br/><br/>
+                <img src="https://i.pinimg.com/736x/9d/ee/11/9dee11d38eb2b97e610386b96e33cdd9.jpg" alt="">
+                </P>
+               </div>
+            <div class="card " id="1"><P>Daily Planner<br/><br/>
+            <img src="https://i.pinimg.com/1200x/d7/4c/21/d74c219d5ffefb8d80217c3bbcef1a9c.jpg" alt="">
+            </P>
+            </div>
+            <div class="card " id="2"><p>Motivation<br/><br/>
+                <img src="https://i.pinimg.com/736x/3b/10/48/3b1048118db9639f14d5c4f73a8ca49a.jpg" alt="">
+            </p></div>
+            <div class="card " id="3"><p>Pomodoro Timer<br/><br/>
+                <img src="https://i.pinimg.com/736x/8a/5d/77/8a5d775a8d1e01aa7b5b18f2ea74d9d3.jpg" alt="">
+            </p></div>
+            <div class="card " id="4"><p>Daily Goals<br/><br/>
+                <img src="https://i.pinimg.com/736x/b6/19/ae/b619aec7940b153ec34328bd85f3f641.jpg" alt="">
+            </p></div>
+        </section>
+    </main>
+<!-- TODO LIST -->
+<section class="fullcard toDo">
+    <div class="top">
+    <button id='1'class="back"><i class="ri-close-large-fill"></i></button>
+<h1>Your Tasklist</h1>
+</div>
+<div id="todoContainer">
+    <div class="addTask">
+        <form>          
+            <input id="task-input" type="text" placeholder="Enter Task">
+            <textarea placeholder="Enter Detail" id="textArea"></textarea>
+           
+              <div class="imp">
+            <input type="checkbox" name="" id="check">
+            <label for="check">Mark a Important</label>
+        </div>
+          <button>Add Task</button>
+        </form>
+    </div>
+<div class="allTask">
+    <div id="taskContainer">
+        <p id="emptyMessage">Your tasklist is empty !</p>
+    </div>
+</div>
+</section>
+<!-- DAILY PLANNER -->
+<section class="fullcard dailyPlan">
+<div class="top">
+    <button id='2'class="back"><i class="ri-close-large-fill"></i></button>
+    <h1>Plane Your Day</h1>
+</div>
+<div class="dayPlan">
+    <!-- plane -->
+
+</div>
+</section>
+<!-- MOTIVATION -->
+<section class="fullcard motivation">
+<div class="top">
+    <button id='3'class="back"><i class="ri-close-large-fill"></i></button><h1>Reminder</h1>
+</div>
+<div class="motivation-container">
+    <div class="motivation-tag">
+        <h2>Quote Of Day</h2>
+    </div>
+    <div class="motivation-name">
+        <h3>
+            <!-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum, esse! -->
+        </h>
+    </div>
+    <div class="motivation-auther">
+        <p>- 
+        </p>
+    </div>
+</div>
+</section>
+<!-- POMODORO TIMER -->
+<section class="fullcard pomodoro">
+<div class="top">
+    <button id='4'class="back"><i class="ri-close-large-fill"></i></button><h1>Pomodoro Timer</h1>
+</div>
+ <div class="timer-wrapper">
+
+    <!-- Mode Switch -->
+    <div class="modes">
+      <button class="mode active" data-time="25">Focus</button>
+      <button class="mode" data-time="5">Short Break</button>
+      <button class="mode" data-time="15">Long Break</button>
+    </div>
+
+    <!-- Circular Timer -->
+    <div class="progress-ring">
+      <svg width="240" height="240">
+        <circle class="bg" cx="120" cy="120" r="100"></circle>
+        <circle class="progress" cx="120" cy="120" r="100"></circle>
+      </svg>
+      <h1 id="time">25:00</h1>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls">
+        <!-- <i class="ri-play-circle-fill"></i> 
+<i class="ri-pause-circle-fill"></i>
+<i class="ri-refresh-line"></i>      -->
+      <button class="start">Start</button>
+      <button class="pause">Pause</button>
+      <button class="reset">Reset</button>
+    </div>
+</div>
+</section>
+
+<!-- DAILY GOAL -->
+<section class="fullcard goal">
+    <div class="top"><button id='5'class="back"><i class="ri-close-large-fill"></i></button><h1>Today Goal</h1></div>
+
+<div id="todoContainer">
+    <div class="addGoals">
+        <form>          
+            <input id="tskinput" type="text" placeholder="Enter Goal">
+            <textarea placeholder="Enter Detail" id="tetArea"></textarea>
+           
+<div class="level">
+  <fieldset>
+    <legend>Priority Level</legend>
+    <div class="lvl">
+    <input type="radio" name="priority" id="low" value="Low" checked>
+    <label for="low" class="priority low1">Low</label>
+
+    <input type="radio" name="priority" id="medium" value="Medium">
+    <label for="medium" class="priority medium1">Medium</label>
+
+    <input type="radio" name="priority" id="high" value="High">
+    <label for="high" class="priority high1">High</label>
+        </div>
+  </fieldset>
+</div>           
+          <button id="goalBtn" type="submit">+ Add Goal</button>
+        </form>
+      </div>
+
+<section class="goalSection">
+  <div class="goalContainer">
+
+    <!-- Header -->
+    <div class="goalHeader">
+      <h2>Goallist</h2>
+      <div class="goalCount">0/0</div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progressWrapper">
+      <div class="progressContainer">
+        <div class="progressBar"></div>
+      </div>
+       <p class="progressText">0%</p>
+    </div>
+
+    <!-- Empty Message -->
+    <p id="noGoalMsg" class="empty">Please set your goals !</p>
+
+    <!-- Goals List -->
+    <div class="allGoals">
+      <!-- Goal cards dynamically add thase -->
+    </div>
+
+  </div>
+</section>
+</div>
+</section>
+ 
+    <script src="script.js"></script>
+</body>
+</html>
